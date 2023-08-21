@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span>Testing</span>
+    Hello World.
+
+    <ul>
+      <li>Apple</li>
+      <li>Orange</li>
+      <li>Mango</li>
+      <li>Banana</li>
+    </ul>
+
+    <script>
+      const textNode = document.createTextNode("Text Node");
+      const ul = document.querySelector("ul");
+
+      // document.body.append(textNode);
+
+      // ul.append(textNode);
+      // ul.after(textNode);   //next sibling ဖြစ်ချင်ရင် afther သုံးလို့ရ
+      ul.before(textNode); //previous sibling ဖြစ်ချင်ရင် before သုံးလို့ရ
+      // ul.prepend(textNode);
+
+      // ul.previousElementSibling.innerText = "aaaaaaaaaaa";
+      // ul.previousSibling.data = " blah blah blah blah";
+
+      // console.dir(ul.childNodes);
+      // console.dir(ul.children);
+      // console.log(ul.previousSibling);
+      // console.log(ul.previousElementSibling);
+
+      // console.log(ul.innerText);
+      // console.log(ul.innerHTML);
+
+      // const box = document.createDocumentFragment();
+
+      // const h1 = document.createElement("h1");
+      // h1.innerText = "Min Ga Lar Par";
+
+      // const p = document.createElement("p");
+      // p.innerText = "Just Testing";
+
+      // const h2 = document.createElement("h2");
+      // h2.innerText = "Heading Two";
+
+      // const h3 = document.createElement("h3");
+      // h3.innerText = "Heading Three";
+
+      // box.append(h1);
+      // box.append(p);
+      // box.prepend(h2);
+
+      // document.body.append(box);
+
+      // if (false) {
+      //   document.body.append(box);
+      // }
+
+      // true && document.body.append(box);
+
+      // console.dir(box);
+
+      //   function createLi(text) {
+      //     const li = document.createElement("li");
+      //     li.innerText = text;
+      //     return li;
+      //   }
+
+      //   const ul = document.createElement("ul");
+      //   document.body.append(ul);
+
+      //   ul.append(createLi("Apple"));
+      //   ul.append(createLi("Orange"));
+      //   ul.append(createLi("Mango"));
+      //   ul.append(createLi("Papaya"));
+
+      // ကိုယ့်ဟာကိုယ်ရေးထားတာ
+      //   const fruits = ["Apple", "Mango", "Banana", "Lemon"];
+      //   for (i = 0; i < fruits.length; i++) {
+      //     ul.append(createLi(fruits[i]));
+      //   }
+
+      //   const li1 = document.createElement("li");
+      //   li1.innerText = "Apple";
+      //   ul.append(li1);
+
+      //   const li2 = document.createElement("li");
+      //   li2.innerText = "Mango";
+      //   ul.append(li2);
+
+      //   const li3 = document.createElement("li");
+      //   li3.innerText = "Banana";
+      //   ul.append(li3);
+
+      //   //create element
+      //   const h1 = document.createElement("h1");
+      //   h1.innerText = "Hello World!";
+      //   console.log(h1);
+
+      //   const p = document.createElement("p");
+      //   p.innerText =
+      //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum magni reiciendis facere quae commodi, temporibus fuga neque doloribus recusandae quibusdam nihil cupiditate dolorem quo ratione vitae sapiente dolorum nemo excepturi?";
+      //   console.log(p);
+
+      //   const a = document.createElement("a");
+      //   a.innerText = "Google";
+      //   a.href = "https://google.com";
+      //   a.target = "blank";
+      //   console.log(a);
+
+      //   const img = document.createElement("img");
+      //   img.src = "./mathias-reding-LMMMWeZWvs4-unsplash.jpg";
+      //   console.log(img);
+
+      //   //put h1 element into body
+      //   document.body.append(h1);
+      //   document.body.append(p);
+      //   document.body.append(a);
+      //   document.body.append(img);
+    </script>
+  </body>
+</html>
