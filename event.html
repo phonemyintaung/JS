@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <a href="https://google.com">Go to google</a> -->
+
+    <!-- <form action="https://mms-it.com">
+      <input type="text" name="test" />
+      <button>Submit</button>
+    </form> -->
+
+    <div class="box">
+      <h1>Heading</h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+        quisquam laborum pariatur accusamus maiores deserunt culpa voluptatibus
+        quod animi iste.
+      </p>
+
+      <input type="file" style="display: none" />
+
+      <ul class="list" style="border: 2px solid black; padding: 20px">
+        <li class="list-item" style="border: 2px solid black">Apple</li>
+        <li class="list-item" style="border: 2px solid black">Orange</li>
+        <li class="list-item" style="border: 2px solid black">Mango</li>
+        <li class="list-item" style="border: 2px solid black">Banana</li>
+      </ul>
+
+      <button>Select File</button>
+    </div>
+
+    <script>
+      document.querySelector("button").addEventListener("click", () => {
+        document.querySelector("[type='file']").click();
+      });
+
+      const box = document.querySelector(".box");
+      const h1 = document.querySelector("h1");
+      const list = document.querySelector(".list");
+      // const listItem = document.querySelector(".list-item");
+      // const listItem = document.querySelectorAll(".list-item"); //querySelectorAll နဲ့ဖမ်းရင် listItem.addEventListener ဆိုပြီးတန်းသုံးလို့မရတော့ဘူး သူ့ prototype က nodelist ဖြစ်သွားလို့
+      const listItem = document.getElementsByClassName("list-item"); //getElementsBy တွေနဲ့ဖမ်းရင်လည်း သူ့ prototype က htmlcollection ဖြစ်သွားလို့ iterable တွေကို array ဖြစ်အောင်လုပ်ပြီး foreach သုံး
+
+      //multiple event listen
+      const eventList = ["click", "mouseover", "mouseout"];
+
+      eventList.forEach((eventList) => {
+        h1.addEventListener(eventList, (event) => {
+          console.log(event);
+        });
+      });
+
+      // console.log(listItem);
+
+      //event listen to multiple element
+      // //HTMLCollection
+      //   // [...listItem] ဆိုပြီး spread သုံးလိုက်တာ spread သုံးလို့ရတာက htmlcollection ကလည်း iterable ဖြစ်လို့ *iterable isn't array but has an array like structure*
+
+      // [...listItem].forEach((li) => {
+      //   li.addEventListener("click", () => console.log(li.innerText));
+      //   // console.log(li);
+      // });
+
+      //NodeList
+      // listItem.forEach((li) => {
+      //   li.addEventListener("click", () => console.log(li.innerText));
+      //   // console.log(li);
+      // });
+
+      // event bubbling -> event emit from bottom to top | ဒီနေ့ခေတ် browser တွေရဲ့ default က event bubbling
+      // event capturing -> event emit from top to bottom | event capturing ကိုလိုချင်ရင် thrid argument အနေနဲ့ true ဆိုပြီးပေးလိုက်ရင်ရပြီ default က false ဖြစ်နေလို့ထပ်ရေးစရာမလိုတာ
+      // event propagation -> event propagation က bubbling တို့ capturing တို့မဖြစ်စေချင်ရင်သုံးတယ်
+
+      // document.body.addEventListener(
+      //   "click",
+      //   () => console.log("You clicked body"),
+      //   false
+      // );
+      // box.addEventListener(
+      //   "click",
+      //   () => console.log("You clicked box"),
+      //   false
+      // );
+      // list.addEventListener(
+      //   "click",
+      //   (event) => {
+      //     event.stopPropagation();
+      //     // alert("hello");
+      //     // location.href = "https://mms-it.com";
+      //     console.log("You clicked list");
+      //   },
+      //   true
+      // );
+      // listItem.addEventListener("click", (event) => {
+      //   // event.stopPropagation();
+      //   console.log("You clicked listItem");
+      // });
+
+      //   const a = document.querySelector("a");
+      //   a.addEventListener("click", (event) => {
+      //     console.log(event);
+      //     event.preventDefault();
+      //   });
+
+      //   const form = document.querySelector("form");
+      //   form.addEventListener("submit", (event) => {
+      //     event.preventDefault();
+      //     const test = document.querySelector("[name='test']");
+      //     console.log(test.value);
+      //   });
+    </script>
+  </body>
+</html>
