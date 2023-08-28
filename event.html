@@ -46,9 +46,9 @@
       const listItem = document.getElementsByClassName("list-item"); //getElementsBy တွေနဲ့ဖမ်းရင်လည်း သူ့ prototype က htmlcollection ဖြစ်သွားလို့ iterable တွေကို array ဖြစ်အောင်လုပ်ပြီး foreach သုံး
 
       //multiple event listen
-      const eventList = ["click", "mouseover", "mouseout"];
+      const eventLists = ["click", "mouseover", "mouseout"];
 
-      eventList.forEach((eventList) => {
+      eventLists.forEach((eventList) => {
         h1.addEventListener(eventList, (event) => {
           console.log(event);
         });
