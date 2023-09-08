@@ -7,3 +7,14 @@ $enable-rounded: false;
 $component-active-bg: black;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+.del-btn {
+  //   display: none;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+tr:hover .del-btn {
+  //   display: block;
+  transform: scale(1);
+}
