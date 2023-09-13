@@ -3,45 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
-    />
+    <title>Test Invocie</title>
+    <link rel="stylesheet" href="./css/test.css" />
   </head>
   <body>
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-5">
-          <div class="" id="box">
-            <h4 class="my-3">List Builder</h4>
-            <div class="input-group mb-3">
-              <input id="textInput" type="text" class="form-control" />
-              <button id="btn" class="btn btn-dark">Add List</button>
-            </div>
-            <ul id="lists" class="list-group">
-              <li
-                class="list-group-item d-flex justify-content-between align-items-center"
-              >
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label class="form-check-label" for="flexCheckChecked">
-                    Just Testing
-                  </label>
-                </div>
-                <button class="btn btn-sm btn-danger">Del</button>
-              </li>
-            </ul>
-          </div>
+      <div class="row">
+        <div class="col-12">
+          <h1>Invoice</h1>
         </div>
+        <div class="border p-3 mb-3">
+          <form action="" id="invoiceForm">
+            <div class="row">
+              <div class="col-6">
+                <label for="selectService" class="form-label"
+                  >Select Service
+                </label>
+                <select name="" id="selectService" class="form-select"></select>
+              </div>
+              <div class="col">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input
+                  type="number"
+                  id="quantity"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="col">
+                <button class="btn btn-dark w-100 h-100" id="">
+                  <i class="bi bi-plus-circle"></i>
+                  Add
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center w-50">Service</th>
+              <th class="text-center">Quantity</th>
+              <th class="text-center">Unit Price</th>
+              <th class="text-center">Total</th>
+            </tr>
+          </thead>
+          <tbody id="lists"></tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" class="text-end">Sub Total</td>
+              <td class="text-end">$ <span>0</span></td>
+            </tr>
+            <tr>
+              <td colspan="3" class="text-end">Tax (5%)</td>
+              <td class="text-end">$ <span>0</span></td>
+            </tr>
+            <tr>
+              <td colspan="3" class="text-end">Total</td>
+              <td class="text-end">$ <span>0</span></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
 
-    <script src="js/test.js"></script>
+    <script src="./js/test.js"></script>
   </body>
 </html>

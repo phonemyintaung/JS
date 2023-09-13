@@ -32,6 +32,12 @@ const subTotal = document.querySelector("#subTotal");
 const tax = document.querySelector("#tax");
 const total = document.querySelector("#total");
 const listTable = document.querySelector("#listTable");
+const addServiceOpenBtn = document.querySelector("#addServiceOpenBtn");
+const addServiceModal = document.querySelector("#addServiceModal");
+const closeServiceModalBtn = document.querySelector("#closeServiceModalBtn");
+const addServiceForm = document.querySelector("#addServiceForm");
+const menu = document.querySelectorAll(".menu");
+const sideBar = document.querySelector("#sideBar");
 
 // function
 const createTr = (service, quantity) => {
@@ -119,7 +125,7 @@ invoiceForm.addEventListener("submit", (event) => {
   if (isExistedService) {
     // console.log("yes it is existed");
     // console.log(isExistedService);
-    const existedQuantity = document.querySelector(".list-quantity");
+    const existedQuantity = isExistedService.querySelector(".list-quantity");
     existedQuantity.innerText =
       parseFloat(existedQuantity.innerText) + quantity.valueAsNumber;
     isExistedService.querySelector(".list-total").innerText =
@@ -142,4 +148,44 @@ app.addEventListener("click", (event) => {
     findTotal();
     showTable();
   }
+});
+
+addServiceOpenBtn.addEventListener("click", () => {
+  console.log("add service");
+  addServiceModal.classList.remove("d-none");
+});
+
+closeServiceModalBtn.addEventListener("click", () => {
+  addServiceModal.classList.add("d-none");
+});
+
+addServiceForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  console.log("You added service.");
+  console.dir(event.target);
+
+  const formData = new FormData(event.target);
+  console.log(formData.get("serviceTitle"), formData.get("servicePrice"));
+
+  const id = Date.now();
+
+  //add data
+  services.push({
+    id,
+    title: formData.get("serviceTitle"),
+    price: formData.get("servicePrice"),
+  });
+
+  //add to dom
+  selectService.append(new Option(formData.get("serviceTitle"), id));
+
+  //close modal
+  event.target.reset();
+  addServiceModal.classList.add("d-none");
+});
+
+menu.forEach((el) => {
+  el.addEventListener("click", () => {
+    sideBar.classList.toggle("active");
+  });
 });
